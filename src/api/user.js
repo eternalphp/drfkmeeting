@@ -51,3 +51,17 @@ export function AddOrUpdate(data) {
     data: qs.stringify(data)
   })
 }
+
+
+/**
+ * GET /api/WvRegistrationForm/GetUserInfo 通过code换取网页授权access_token
+ * @export
+ * @param {*} code
+ * @returns
+ */
+export function sendMessage(mobile) {
+  return request({
+    url: `Sms/sendMessage` + "&mobile=" + mobile,
+    method: 'post',
+  })
+}
